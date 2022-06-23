@@ -1,13 +1,7 @@
 import streamlit as st
-from PIL import Image
 from datetime import date, timedelta
 import time
 import streamlit.components.v1 as components
-import json
-import os
-import joblib
-import pandas as pd
-import numpy as np
 
 st.set_page_config(
 page_title="MangoVirus",
