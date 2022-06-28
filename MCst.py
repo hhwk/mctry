@@ -1,7 +1,13 @@
 import streamlit as st
+from PIL import Image
 from datetime import date, timedelta
 import time
 import streamlit.components.v1 as components
+import json
+import os
+import joblib
+import pandas as pd
+import numpy as np
 
 st.set_page_config(
 page_title="MangoVirus",
@@ -11,14 +17,15 @@ initial_sidebar_state="collapsed", #expanded/collapsed
 menu_items={
          'Get Help': 'https://www.google.com/',
          'Report a bug': "https://www.google.com/",
-         'About': "# ХУЙ"
+         'About': "# Автор MangoVirus"
      })
 menu = st.sidebar.selectbox(
      'Меню',
      ('Стартовая страница','Маджестики'))
 hour_count=0
 if menu=='Стартовая страница':
-    '''Привет)'''
+    '''# Привет!
+    Это полезный сайт по Majestic'''
 if menu=='Маджестики':
 
     vip=0
