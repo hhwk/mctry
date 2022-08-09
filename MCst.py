@@ -20,8 +20,32 @@ menu_items={
      })
 menu = st.sidebar.selectbox(
      'Меню',
-     ('Стартовая страница','Маджестики'))
+     ('Стартовая страница','Маджестики','Крафты Тарков'))
 hour_count=0
+if menu=='Крафты Тарков':
+    price=st.number_input('Цена продажи предмета')
+    col=st.number_input('Кол-во получаемых предметов')
+    craft_col=('Кол-во предметов для крафта')
+    i=0
+    fin=0
+
+    if st.button('Обновить данные'):
+        with st.spinner('Wait for it...'):
+            time.sleep(5)
+
+        while i<col:
+            time1 = st.number_input('Сколько предметов')
+            time = st.number_input('Сколько стоит предмет')
+            fin = fin + (time * time1)
+            time = 0
+            time1 = 0
+            i += 1
+        with st.container():
+            col1, col2, col3, col4, col5 = st.columns(5)
+            col1.metric("Цена крафта", fin*col)
+            col2.metric("Цена продажи", price)
+            col3.metric("Выгода", fin-price)
+
 if menu=='Стартовая страница':
     '''# Привет!
     Это полезный сайт по Majestic'''
